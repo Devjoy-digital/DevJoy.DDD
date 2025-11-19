@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>DevJoy DDD Kernel</Title>
 		<Authors>Jeremy Maynor</Authors>
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
-		<AssemblyVersion>0.1.0.4</AssemblyVersion>
-		<PackageVersion>0.1.0.4</PackageVersion>
+		<AssemblyVersion>0.1.0.5</AssemblyVersion>
+		<PackageVersion>0.1.0.5</PackageVersion>
 		<RootNamespace>DevJoy</RootNamespace>
 		<Company>DevJoy, Ltd.</Company>
-		<Description>Building blocks for domain driven design in .net 8.</Description>
+		<Description>Building blocks for domain driven design in .net 8 and .net 9.</Description>
 		<Copyright>All rights reserved.</Copyright>
 		<RepositoryUrl>https://github.com/jamaynor/DevJoy.Kernel</RepositoryUrl>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
