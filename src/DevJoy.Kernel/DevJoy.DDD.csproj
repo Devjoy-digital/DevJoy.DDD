@@ -8,8 +8,8 @@
 		<Title>DevJoy DDD Kernel</Title>
 		<Authors>Jeremy Maynor</Authors>
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
-		<AssemblyVersion>0.1.0.5</AssemblyVersion>
-		<PackageVersion>0.1.0.5</PackageVersion>
+		<AssemblyVersion>1.2.1</AssemblyVersion>
+		<PackageVersion>1.2.1</PackageVersion>
 		<RootNamespace>DevJoy</RootNamespace>
 		<Company>DevJoy, Ltd.</Company>
 		<Description>Building blocks for domain driven design in .net 8 and .net 9.</Description>

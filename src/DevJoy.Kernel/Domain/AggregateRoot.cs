@@ -12,30 +12,34 @@ namespace DevJoy.Domain
     /// </summary>
     public class AggregateRoot<TId> : Entity<TId>, IAggregateRoot<TId>
     {
-
+        // private fields
         private List<IDomainEvent> _domainEvents = new();
-        public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents;
-        public void AddDomainEvent(IDomainEvent domainEvent)
+        private List<IExternalEvent> _externalEvents = new();
+
+
+        // internal properties and methods
+        protected void AddDomainEvent(IDomainEvent domainEvent, bool skipDuplicateCheck = false)
         {
-            if (_domainEvents.Contains(domainEvent))
+            if (!skipDuplicateCheck && _domainEvents.Contains(domainEvent))
             {
                 throw new Exception("An instance of a domain every were added multiple times.");
             }
             _domainEvents.Add(domainEvent);
         }
-        public void ClearDomainEvents() => _domainEvents.Clear();
-
-
-        private List<IExternalEvent> _externalEvents = new();
-        public IReadOnlyCollection<IExternalEvent> ExternalEvents => _externalEvents;
-        public void AddExternalEvent(IExternalEvent externalEvent)
+        protected void AddExternalEvent(IExternalEvent externalEvent, bool skipDuplicateCheck = false)
         {
-            if (_externalEvents.Contains(externalEvent))
+            if (!skipDuplicateCheck && _externalEvents.Contains(externalEvent))
             {
                 throw new Exception("An instance of an external every were added multiple times.");
             }
             _externalEvents.Add(externalEvent);
         }
+
+
+        // public properties and methods
+        public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents;
+        public void ClearDomainEvents() => _domainEvents.Clear();
+        public IReadOnlyCollection<IExternalEvent> ExternalEvents => _externalEvents;
         public void ClearExternalEvents() => _externalEvents.Clear();
     }
 
